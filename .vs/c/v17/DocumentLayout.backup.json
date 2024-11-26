@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AB739528-8578-4B48-AEEB-F3CE402F7F20}|c\\Calculator.csproj|c:\\users\\ahmed\\downloads\\my-github\\calculator\\c\\calculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{AB739528-8578-4B48-AEEB-F3CE402F7F20}|c\\Calculator.csproj|solutionrelative:c\\calculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Calculator",
+              "DocumentMoniker": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\c\\Calculator.csproj",
+              "RelativeDocumentMoniker": "c\\Calculator.csproj",
+              "ToolTip": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\c\\Calculator.csproj",
+              "RelativeToolTip": "c\\Calculator.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-26T23:00:41.429Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+D:\New folder\c\c\bin\Debug\net8.0\c.exe
+D:\New folder\c\c\bin\Debug\net8.0\c.deps.json
+D:\New folder\c\c\bin\Debug\net8.0\c.runtimeconfig.json
+D:\New folder\c\c\bin\Debug\net8.0\c.dll
+D:\New folder\c\c\bin\Debug\net8.0\c.pdb
+D:\New folder\c\c\obj\Debug\net8.0\c.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\c\c\obj\Debug\net8.0\c.AssemblyInfoInputs.cache
+D:\New folder\c\c\obj\Debug\net8.0\c.AssemblyInfo.cs
+D:\New folder\c\c\obj\Debug\net8.0\c.csproj.CoreCompileInputs.cache
+D:\New folder\c\c\obj\Debug\net8.0\c.dll
+D:\New folder\c\c\obj\Debug\net8.0\refint\c.dll
+D:\New folder\c\c\obj\Debug\net8.0\c.pdb
+D:\New folder\c\c\obj\Debug\net8.0\c.genruntimeconfig.cache
+D:\New folder\c\c\obj\Debug\net8.0\ref\c.dll
+D:\c\c\bin\Debug\net8.0\c.exe
+D:\c\c\bin\Debug\net8.0\c.deps.json
+D:\c\c\bin\Debug\net8.0\c.runtimeconfig.json
+D:\c\c\bin\Debug\net8.0\c.dll
+D:\c\c\bin\Debug\net8.0\c.pdb
+D:\c\c\obj\Debug\net8.0\c.GeneratedMSBuildEditorConfig.editorconfig
+D:\c\c\obj\Debug\net8.0\c.AssemblyInfoInputs.cache
+D:\c\c\obj\Debug\net8.0\c.AssemblyInfo.cs
+D:\c\c\obj\Debug\net8.0\c.csproj.CoreCompileInputs.cache
+D:\c\c\obj\Debug\net8.0\c.dll
+D:\c\c\obj\Debug\net8.0\refint\c.dll
+D:\c\c\obj\Debug\net8.0\c.pdb
+D:\c\c\obj\Debug\net8.0\c.genruntimeconfig.cache
+D:\c\c\obj\Debug\net8.0\ref\c.dll
