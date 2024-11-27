@@ -1,5 +1,4 @@
 
-markdown
 # Calculator Console Application
 
 A versatile and powerful console-based calculator that supports **basic**, **advanced**, and **scientific** operations. The application is designed with user-friendly prompts and supports dynamic expressions for seamless calculations.
@@ -33,7 +32,7 @@ Supports more complex mathematical functions:
 
 **Example:**
 ```plaintext
-Input: sin(45+45)
+Input: sin(45+45)+log(10)
 Output: 1
 ```
 
@@ -48,15 +47,20 @@ Provides additional operations for scientific computations:
 
 **Example:**
 ```plaintext
-Input: sqrt(16) + exp(2)
+Input: sqrt(2+2) + exp(2)
 Output: 20.389...
+```
+```plaintext
+Input: 2+2+2+5i+i
+Output: Real Sum: 6
+        Imaginary Sum: 6
 ```
 
 ---
 
 ## Key Highlights
-- **Dynamic Expressions:** Combine multiple operations in a single input.  
-  **Example:** `5 + sin(45) * log(10)`
+- **Dynamic Expressions:** Combine multiple operations in a single input in single kind of operation.  
+  **Example:** `cos(90) + sin(45) * log(10)`
 - **Previous Result Reference:** Use `ANS` or `ans` to reference the result of the last operation.  
   **Example:** `ANS + 5` (if the last result was 10, the output is 15).
 - **Error Handling:** Guides users in case of invalid input.
@@ -66,8 +70,3 @@ Output: 20.389...
 
 ## Enjoy your calculations! 😊
 ```
-
-### تحسينات:
-1. **توحيد التنسيق:** تم إصلاح العناوين والقوائم لجعلها أكثر تناسقًا.
-2. **إصلاح القيم في الأمثلة:** بناءً على الكود الخاص بك، يمكن أن تكون الحسابات مختلفة. تأكد من مراجعة القيم النهائية.
-3. **إزالة الأقسام غير المكتملة:** إذا كنت تريد إضافة المزيد، مثل **كيفية التثبيت والتشغيل** أو **مستقبل المشروع**، يمكننا العمل عليها لاحقًا!
