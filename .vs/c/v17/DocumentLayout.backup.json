@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AB739528-8578-4B48-AEEB-F3CE402F7F20}|c\\Calculator.csproj|c:\\users\\ahmed\\downloads\\my-github\\calculator\\c\\basiccalculator .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB739528-8578-4B48-AEEB-F3CE402F7F20}|c\\Calculator.csproj|solutionrelative:c\\basiccalculator .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AB739528-8578-4B48-AEEB-F3CE402F7F20}|c\\Calculator.csproj|c:\\users\\ahmed\\downloads\\my-github\\calculator\\c\\calculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{AB739528-8578-4B48-AEEB-F3CE402F7F20}|c\\Calculator.csproj|solutionrelative:c\\calculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -19,7 +23,20 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Calculator",
+              "Title": "BasicCalculator .cs",
+              "DocumentMoniker": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\c\\BasicCalculator .cs",
+              "RelativeDocumentMoniker": "c\\BasicCalculator .cs",
+              "ToolTip": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\c\\BasicCalculator .cs*",
+              "RelativeToolTip": "c\\BasicCalculator .cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T17:35:08.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Calculator.csproj",
               "DocumentMoniker": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\c\\Calculator.csproj",
               "RelativeDocumentMoniker": "c\\Calculator.csproj",
               "ToolTip": "C:\\Users\\ahmed\\Downloads\\My-Github\\Calculator\\c\\Calculator.csproj",

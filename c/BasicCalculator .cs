@@ -1,5 +1,12 @@
-﻿using c;
+﻿
+using c;
+using System;
+using System.Collections.Generic;
 
+
+
+
+    
 
 public class BasicCalculator : ICalculator
 {
@@ -22,17 +29,14 @@ public class BasicCalculator : ICalculator
     }
 
 
+
+
+
     public void Calculate(string input)
     {
         try
         {
             input = input.ToUpper().Replace("ANS", LastAnswer.ToString());
-
-            
-            if (!IsValidExpression(input))
-            {
-                throw new FormatException("Invalid input. Please enter a valid mathematical expression.");
-            }
 
             double result = EvaluateExpression(input);
 
@@ -42,129 +46,143 @@ public class BasicCalculator : ICalculator
             Console.WriteLine($"Result: {result}");
             Console.ResetColor();
         }
-        catch (DivideByZeroException ex)
-        {
-            ErrorHandler.HandleError(ex, "Cannot divide by zero. Please check your input.");
-        }
-        catch (FormatException ex)
-        {
-            ErrorHandler.HandleError(ex, "Invalid input format. Please check your input.");
-        }
         catch (Exception ex)
         {
-            ErrorHandler.HandleError(ex);
+            PrintError($"Error: {ex.Message}");
         }
     }
+
+
+
+
+
 
     private double EvaluateExpression(string input)
     {
         try
         {
-            input = input.Replace(" ", "");
+            input = input.Replace(" ", ""); // Remove spaces
+            Stack<double> numbers = new Stack<double>();
+            Stack<char> operators = new Stack<char>();
 
-            while (input.Contains("("))
+            int i = 0;
+            while (i < input.Length)
             {
-                int openIndex = input.LastIndexOf('('); 
-                int closeIndex = input.IndexOf(')', openIndex); 
+                char currentChar = input[i];
 
-                if (closeIndex == -1)
-                    throw new FormatException("Unmatched parentheses.");
-
-                string innerExpression = input.Substring(openIndex + 1, closeIndex - openIndex - 1);
-
-                double innerResult = EvaluateExpression(innerExpression);
-
-                input = input.Substring(0, openIndex) + innerResult.ToString() + input.Substring(closeIndex + 1);
-            }
-
-            return EvaluateSimpleExpression(input);
-        }
-        catch
-        {
-            throw new Exception("Invalid input format.");
-        }
-    }
-
-
-    private double EvaluateSimpleExpression(string input)
-    {
-        List<char> operators = new List<char>();
-        List<double> numbers = new List<double>();
-        string currentNumber = "";
-
-        for (int i = 0; i < input.Length; i++)
-        {
-            char ch = input[i];
-
-            if (ch == '-' && (i == 0 || "+-*/%".Contains(input[i - 1])))
-            {
-                currentNumber += ch; 
-            }
-            else if (char.IsDigit(ch) || ch == '.')
-            {
-                currentNumber += ch; 
-            }
-            else if ("+-*/%".Contains(ch))
-            {
-                if (!string.IsNullOrEmpty(currentNumber))
+                if (char.IsDigit(currentChar) || currentChar == '.') // Handle numbers
                 {
-                    numbers.Add(double.Parse(currentNumber));
-                    currentNumber = "";
+                    string number = "";
+                    while (i < input.Length && (char.IsDigit(input[i]) || input[i] == '.'))
+                    {
+                        number += input[i];
+                        i++;
+                    }
+                    numbers.Push(double.Parse(number));
+                    continue;
                 }
-                operators.Add(ch); 
-            }
-        }
-
-        if (!string.IsNullOrEmpty(currentNumber))
-            numbers.Add(double.Parse(currentNumber));
-
-        for (int i = 0; i < operators.Count; i++)
-        {
-            if (operators[i] == '*' || operators[i] == '/' || operators[i] == '%')
-            {
-                if ((operators[i] == '/' || operators[i] == '%') && numbers[i + 1] == 0)
-                    throw new DivideByZeroException("Cannot divide by zero.");
-
-                double result = operators[i] switch
+                else if (currentChar == '(') // Handle opening parenthesis
                 {
-                    '*' => numbers[i] * numbers[i + 1],
-                    '/' => numbers[i] / numbers[i + 1],
-                    '%' => numbers[i] % numbers[i + 1],
-                    _ => throw new InvalidOperationException("Unknown operator")
-                };
+                    operators.Push(currentChar);
+                }
+                else if (currentChar == ')') // Handle closing parenthesis
+                {
+                    while (operators.Count > 0 && operators.Peek() != '(')
+                    {
+                        ComputeTop(numbers, operators);
+                    }
+                    if (operators.Count == 0 || operators.Peek() != '(')
+                        throw new Exception("Mismatched parentheses.");
+                    operators.Pop();
 
-                numbers[i] = result;
-                numbers.RemoveAt(i + 1);
-                operators.RemoveAt(i--);
+                    // Add implicit multiplication if ')' is followed by a number or '('
+                    if (i + 1 < input.Length && (char.IsDigit(input[i + 1]) || input[i + 1] == '('))
+                    {
+                        operators.Push('*');
+                    }
+                }
+                else if ("+-*/%".Contains(currentChar)) // Handle operators
+                {
+                    while (operators.Count > 0 && Precedence(operators.Peek()) >= Precedence(currentChar))
+                    {
+                        ComputeTop(numbers, operators);
+                    }
+                    operators.Push(currentChar);
+                }
+                else
+                {
+                    throw new Exception($"Unexpected character: {currentChar}");
+                }
+
+                i++;
             }
-        }
 
-        for (int i = 0; i < operators.Count; i++)
-        {
-            double result = operators[i] switch
+            while (operators.Count > 0) // Process remaining operators
             {
-                '+' => numbers[i] + numbers[i + 1],
-                '-' => numbers[i] - numbers[i + 1],
-                _ => throw new InvalidOperationException("Unknown operator")
-            };
+                ComputeTop(numbers, operators);
+            }
 
-            numbers[i] = result;
-            numbers.RemoveAt(i + 1);
-            operators.RemoveAt(i--);
+            if (numbers.Count != 1)
+                throw new Exception("Invalid expression format.");
+
+            return numbers.Pop();
         }
-
-        return numbers[0];
+        catch (Exception ex)
+        {
+            throw new Exception($"Error processing expression: {ex.Message}");
+        }
     }
 
 
-
-    private bool IsValidExpression(string input)
+    private int Precedence(char op)
     {
-        return !string.IsNullOrWhiteSpace(input) &&
-               System.Text.RegularExpressions.Regex.IsMatch(input, @"^[\d+\-*/%().\s]+$");
+        return op switch
+        {
+            '+' or '-' => 1,
+            '*' or '/' or '%' => 2,
+            _ => 0
+        };
     }
 
+    private void ComputeTop(Stack<double> numbers, Stack<char> operators)
+    {
+        if (numbers.Count < 2 || operators.Count == 0)
+            throw new Exception("Invalid expression format.");
+
+        double b = numbers.Pop();
+        double a = numbers.Pop();
+        char op = operators.Pop();
+
+        double result = op switch
+        {
+            '+' => a + b,
+            '-' => a - b,
+            '*' => a * b,
+            '/' => b == 0 ? throw new DivideByZeroException("Cannot divide by zero.") : a / b,
+            '%' => b == 0 ? throw new DivideByZeroException("Cannot modulo by zero.") : a % b,
+            _ => throw new InvalidOperationException($"Unknown operator: {op}")
+        };
+
+        numbers.Push(result);
+    }
+
+
+
+
+
+
+
+
+
+
+    private void PrintError(string message)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(message);
+        Console.ResetColor();
+    }
 
 
 
 }
+
