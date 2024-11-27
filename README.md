@@ -33,7 +33,7 @@ Supports more complex mathematical functions:
 **Example:**
 ```plaintext
 Input: sin(45+45)+log(10)
-Output: 1
+Output: 2
 ```
 
 ### **3. Scientific Calculator**
@@ -48,7 +48,7 @@ Provides additional operations for scientific computations:
 **Example:**
 ```plaintext
 Input: sqrt(2+2) + exp(2)
-Output: 20.389...
+Output: Result: 9.389...
 ```
 ```plaintext
 Input: 2+2+2+5i+i
