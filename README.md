@@ -1,11 +1,10 @@
-يبدو أنك قمت بتحسين ملف README بشكل جيد، لكن هناك بعض التنسيقات الخاطئة التي يمكن تصحيحها للحصول على مظهر أكثر اتساقًا. إليك الإصدار المحسن:
 
-```markdown
+markdown
 # Calculator Console Application
 
 A versatile and powerful console-based calculator that supports **basic**, **advanced**, and **scientific** operations. The application is designed with user-friendly prompts and supports dynamic expressions for seamless calculations.
 
----
+
 
 ## Features
 
