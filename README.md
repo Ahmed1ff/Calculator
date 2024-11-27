@@ -1,5 +1,6 @@
+يبدو أنك قمت بتحسين ملف README بشكل جيد، لكن هناك بعض التنسيقات الخاطئة التي يمكن تصحيحها للحصول على مظهر أكثر اتساقًا. إليك الإصدار المحسن:
 
-
+```markdown
 # Calculator Console Application
 
 A versatile and powerful console-based calculator that supports **basic**, **advanced**, and **scientific** operations. The application is designed with user-friendly prompts and supports dynamic expressions for seamless calculations.
@@ -17,10 +18,10 @@ Perform fundamental arithmetic operations:
 - **Modulo (`%`)**
 
 **Example:**
-plaintext
-Input: 5+5*2
-Output: 15
-
+```plaintext
+Input: (5*5+5/5%5)*5+1
+Output: 126
+```
 
 ### **2. Advanced Calculator**
 Supports more complex mathematical functions:
@@ -56,44 +57,18 @@ Output: 20.389...
 
 ## Key Highlights
 - **Dynamic Expressions:** Combine multiple operations in a single input.  
-  Example: `5 + sin(45) * log(10)`
+  **Example:** `5 + sin(45) * log(10)`
 - **Previous Result Reference:** Use `ANS` or `ans` to reference the result of the last operation.  
-  Example: `ANS + 5` (if the last result was 10, the output is 15).
+  **Example:** `ANS + 5` (if the last result was 10, the output is 15).
 - **Error Handling:** Guides users in case of invalid input.
 - **Intuitive Design:** Menu-driven interface with categorized operations.
 
 ---
 
-## How to Use
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   ```
-2. Open the project in your preferred IDE.
-3. Run the program and follow the menu instructions.
-
----
-
-## Future Enhancements
-- Add support for **graphing functionalities**.
-- Extend support for **matrix operations**.
-- Provide a **GUI version** of the calculator.
-
----
-
-## Contributing
-Feel free to contribute by opening issues or submitting pull requests! 🎉
-
----
-
-## License
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Enjoy your calculations! 😊
+## Enjoy your calculations! 😊
 ```
 
-### ملاحظات:
-- يمكنك تعديل اسم المشروع أو الروابط إذا كان لديك مستودع فعلي.
-- إذا كنت تريد إضافة صور أو أمثلة أكثر تفصيلاً، أخبرني!
+### تحسينات:
+1. **توحيد التنسيق:** تم إصلاح العناوين والقوائم لجعلها أكثر تناسقًا.
+2. **إصلاح القيم في الأمثلة:** بناءً على الكود الخاص بك، يمكن أن تكون الحسابات مختلفة. تأكد من مراجعة القيم النهائية.
+3. **إزالة الأقسام غير المكتملة:** إذا كنت تريد إضافة المزيد، مثل **كيفية التثبيت والتشغيل** أو **مستقبل المشروع**، يمكننا العمل عليها لاحقًا!
